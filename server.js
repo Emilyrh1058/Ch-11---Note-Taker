@@ -20,7 +20,6 @@ app.use('/', htmlRoutes);
 
 const fs = require('fs');
 const path = require('path');
-const { notes } = require('./Develop/db/db.json');
 
 
 app.listen(PORT, () => {

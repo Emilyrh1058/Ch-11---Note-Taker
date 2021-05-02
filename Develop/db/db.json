@@ -1,37 +1,14 @@
 [
-    {
-      "title": "Test Title a",
-      "text": "Test text"
-    },
-    {
-      "title": "Test Title b",
-      "text": "Test text"
-    },
-    {
-      "title": "Test Title c",
-      "text": "Test text"
-    },
-    {
-      "title": "Test Title d",
-      "text": "Test text"
-    },
-    {
-      "title": "Test Title e",
-      "text": "Test text"
-    },
-    {
-      "title": "Test Title f",
-      "text": "Test text",
-      "id": "5"
-    },
-    {
-      "title": "Test Title f",
-      "text": "test text",
-      "id": "6"
-    },
-    {
-      "title": "Test Title f",
-      "text": "test text",
-      "id": "7"
-    }
-  ]
+  {
+    "title": "Test Title a",
+    "text": "Test text"
+  },
+  {
+    "title": "Test Title b",
+    "text": "Test text"
+  },
+  {
+    "title": "Test Title c",
+    "text": "Test text"
+  }
+]
