@@ -10,16 +10,17 @@ const { notes } = require('./Develop/db/db.json');
 function filterByQuery(query, notesArray) {
   let filteredResults = notesArray;
   if (query.id) {
-    filteredResults = filteredResults.filter(notes => notes.id === query.id);
+    filteredResults = filteredResults.filter(note => note.id === query.id);
   }
-  if (query.species) {
-    filteredResults = filteredResults.filter(notes => notes.title === query.title);
+  if (query.title) {
+    filteredResults = filteredResults.filter(note => note.title === query.title);
   }
-  if (query.name) {
-    filteredResults = filteredResults.filter(notes => notes.text === query.text);
+  if (query.text) {
+    filteredResults = filteredResults.filter(note => note.text === query.text);
   }
   return filteredResults;
 }
+
 
 app.get('/api/notes', (req, res) => {
   let results = notes;
@@ -28,6 +29,17 @@ app.get('/api/notes', (req, res) => {
   }
   res.json(results);
 });
+
+app.get('/api/notes/:1d', (req, res) => {
+  const result = findById(req.params.id, notes);
+  if (result) {
+    res.json(result);
+  } else {
+    res.sendStatus(404);
+  }  
+  res.json(404);
+});
+
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
