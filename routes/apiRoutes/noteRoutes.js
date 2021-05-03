@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { filterByQuery, createNewNote, validateNote } = require('../../lib/notes');
+const { filterByQuery, createNewNote, validateNote, deleteNote } = require('../../lib/notes');
 const notes = require('../../Develop/db/db.json');
 
 router.get('/notes', (req, res) => {
@@ -18,6 +18,12 @@ router.post('/notes', (req, res) => {
     const note = createNewNote(req.body, notes);
     res.json(note);
   }
+});
+
+router.delete('/notes/:id', (req, res) => {
+  const noteTitle = req.params.id;
+  notes = deleteNote(filterByQuery(id, notes))
+  res.json(notes)
 });
 
 

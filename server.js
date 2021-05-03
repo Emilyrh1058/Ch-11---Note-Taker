@@ -1,8 +1,8 @@
-// const { query } = require('express');
-
 const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
+const fs = require('fs');
+const path = require('path');
 
 
 const apiRoutes = require('./routes/apiRoutes');
@@ -16,10 +16,6 @@ app.use(express.static('Develop/public'));
 
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
-
-
-const fs = require('fs');
-const path = require('path');
 
 
 app.listen(PORT, () => {
