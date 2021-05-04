@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { filterByQuery, createNewNote, validateNote, deleteNote } = require('../../lib/notes');
-const notes = require('../../Develop/db/db.json');
+let notes = require('../../Develop/db/db.json');
 
 router.get('/notes', (req, res) => {
   let results = notes;
-  if (req.query) {
-    results = filterByQuery(req.query, results);
-  }
+  // if (req.query) {
+  //   results = filterByQuery(req.query, results);
+  // }
   res.json(results);
 });
 
@@ -21,10 +21,9 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete('/notes/:id', (req, res) => {
-  console.log("reached delete route")
-  const noteTitle = req.params.id;
+  console.log("reached delete route", notes)
+  const id = req.params.id;
   notes = deleteNote(filterByQuery(id, notes))
-  console.log("notes", notes)
   res.json(notes)
 });
 
